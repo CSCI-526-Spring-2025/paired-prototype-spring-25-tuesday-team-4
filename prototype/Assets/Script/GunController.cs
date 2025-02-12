@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviour
 {
@@ -9,6 +10,17 @@ public class GunController : MonoBehaviour
 
     public List<ColorType> bulletColors = new List<ColorType> { ColorType.Red, ColorType.Blue, ColorType.Yellow }; // Preset bullet colors
     private int currentColorIndex = 0;
+
+    private BulletManager bulletManager;
+
+    void Start()
+    {
+        bulletManager = FindObjectOfType<BulletManager>();
+    }
+
+    public ColorType getCurrentColor() {
+        return bulletColors[currentColorIndex];
+    }
 
     void Update()
     {
@@ -32,9 +44,10 @@ public class GunController : MonoBehaviour
         }
 
         // Shoot bullet when left mouse button is pressed
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && bulletManager.GetBulletCount() > 0)
         {
             Shoot();
+            bulletManager.FireBullet();
         }
 
         if (Input.GetKeyDown(KeyCode.R))

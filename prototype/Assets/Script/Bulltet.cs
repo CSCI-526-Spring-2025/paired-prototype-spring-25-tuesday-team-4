@@ -8,8 +8,13 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public ColorType bulletColor = ColorType.Yellow;
+
+    private BulletManager bulletManager;
+
     void Start()
     {
+        bulletManager = FindObjectOfType<BulletManager>();
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         UpdateBulletColor();
@@ -39,9 +44,12 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Platform")) 
         {
             Platform platform = collision.GetComponent<Platform>();
-            if (platform != null)
+            if (platform != null && platform.platformColor != bulletColor)
             {
-                platform.ChangeColor(bulletColor); 
+                platform.ChangeColor(bulletColor);
+                bulletManager.reduceBulletCount();
+                bulletManager.UpdateBulletUI();
+                
             }
 
             Destroy(gameObject); 
