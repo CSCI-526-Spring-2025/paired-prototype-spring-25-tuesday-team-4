@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ColorType
 {
+    // Limit color to two for prototype demo
     Red,
     Blue,
     Green,

@@ -9,6 +9,9 @@ public class GunController : MonoBehaviour
     public Transform player; // Reference to player
 
     public List<ColorType> bulletColors = new List<ColorType> { ColorType.Red, ColorType.Blue, ColorType.Yellow }; // Preset bullet colors
+    // public List<ColorType> bulletColors = new List<ColorType> { ColorType.Red, ColorType.Yellow }; // Preset bullet colors
+
+
     private int currentColorIndex = 0;
 
     private BulletManager bulletManager;
