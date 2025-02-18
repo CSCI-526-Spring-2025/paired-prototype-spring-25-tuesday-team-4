@@ -1034,7 +1034,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 754381121}
-  - component: {fileID: 754381122}
   m_Layer: 0
   m_Name: Ladder
   m_TagString: Untagged
@@ -1061,19 +1060,6 @@ Transform:
   - {fileID: 899558360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &754381122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754381120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf997cf26fb8b304cbf8519d1caf33f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformColor: 0
 --- !u!1 &899558359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,7 +1929,7 @@ Transform:
   m_GameObject: {fileID: 1233426229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.600029, y: -7.349988, z: 10}
+  m_LocalPosition: {x: -5.78, y: -5.9, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
